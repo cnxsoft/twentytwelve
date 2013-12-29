@@ -7,7 +7,7 @@ Description: The 2012 theme for WordPress is a fully responsive theme that looks
 Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Text Domain: twentytwelve
 
 This theme, like WordPress, is licensed under the GPL.
@@ -660,8 +660,8 @@ footer[role="contentinfo"] {
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
-	max-width: 960px;
-	max-width: 68.571428571rem;
+	max-width: 1028px;
+	max-width: 75rem;
 	margin-top: 24px;
 	margin-top: 1.714285714rem;
 	margin-left: auto;
@@ -1432,6 +1432,18 @@ img#wpstats {
 /* =Media queries
 -------------------------------------------------------------- */
 
+/* Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See http://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
 	.author-avatar {
@@ -1445,8 +1457,8 @@ img#wpstats {
 	}
 	.site {
 		margin: 0 auto;
-		max-width: 960px;
-		max-width: 68.571428571rem;
+		max-width: 1028px;
+		max-width: 75rem;
 		overflow: hidden;
 	}
 	.site-content {
@@ -1598,8 +1610,8 @@ img#wpstats {
 	}
 }
 
-/* Minimum width of 960 pixels. */
-@media screen and (min-width: 960px) {
+/* Minimum width of 1028 pixels. */
+@media screen and (min-width: 1028px) {
 	body {
 		background-color: #e6e6e6;
 	}
